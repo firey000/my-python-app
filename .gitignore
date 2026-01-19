@@ -1,0 +1,43 @@
+# Python кэш и байт-код
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+.env/
+
+# SQLite база данных
+*.db
+*.sqlite3
+
+# MySQL бэкап
+database/backups/
+
+# Файлы среды исполнения
+.DS_Store
+*.log
+logs/
+
+# Конфиденциальные данные
+.env
+.env.local
+.env.production
+
+# Migrations (Alemibc)
+migrations/version/*
+!migrations/version/head_version.py
+
+# IDE
+.idea/
+.vscode/
+
+# Прочие временные файлы
+*~
+*.sw?
+.npmrc
+node_modules/
+coverage.xml
+.htmlcov/
+*.bak
