@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Генерация отчета произведена: {{ current_time }}</p>
+    <div>
+        <h2>Подробная информация</h2>
+        <table border="1">
+            <tr>
+                <th>Имя пользователя</th>
+                <th>ID заказа</th>
+                <th>Сумма покупки</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

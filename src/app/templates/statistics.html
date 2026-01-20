@@ -1,0 +1,82 @@
+html_content = f"""
+        <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <title>Статистический отчет</title>
+            <style>
+                body {{
+                    font-family: Arial, Helvetica, sans-serif;
+                    line-height: 1.6;
+                }}
+                h1 {{
+                    color: #333;
+                    text-align: center;
+                }}
+                .title-page {{
+                    page-break-after: always;
+                }}
+                img {{
+                    display: block;
+                    margin: auto;
+                    max-width: 100%;
+                }}
+                table {{
+                    width: 100%;
+                    border-collapse: collapse;
+                }}
+                th, td {{
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }}
+                thead {{
+                    background-color: #f2f2f2;
+                }}
+            </style>
+        </head>
+        <body>
+            <!-- Титульная страница -->
+            <section class="title-page">
+                <h1>Статистический отчет</h1>
+                <h1>Управление распределенной командой</h1>
+                <p>Автор: Система отчетности</p>
+                <p>Дата формирования отчета: {datetime.now().strftime('%d.%m.%Y')}</p>
+            </section>
+        
+            <!-- Основная статистика -->
+            <section>
+                <h2>Общая статистика</h2>
+                <ul>
+                    <li>Количество сотрудников: {total_employees}</li>
+                    <li>Количество задач: {total_tasks}</li>
+                    <li>Количество проектов: {total_projects}</li>
+                </ul>
+                
+                <!-- Круговая диаграмма -->
+                <img src="data:image/png;base64,{pie_chart_base64}" alt="Круговая диаграмма задач"/>
+            
+                <!-- Топ сотрудников -->
+                <h2>Топ сотрудников по количеству выполненых задач:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ФИО</th>
+                            <th>Кол-во задач</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        """
+        for emp in top_employees:
+            html_content += f"""
+                <tr>
+                    <td>{emp['Fcs']}</td>
+                    <td>{emp['completed_tasks']}</td>
+                </tr>
+            """
+        html_content += """
+                    </tbody>
+                </table>
+            </section>
+        </body>
+        </html>
+        """

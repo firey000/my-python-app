@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистический отчет</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Титульная страница -->
+<header>
+    <h1>Управление распределенной командой</h1>
+    <h2>Статистический отчет</h2>
+    <p>Дата генерации: <span id="report-date"></span></p>
+</header>
+
+<script>
+    // Устанавливаем текущую дату
+    document.getElementById('report-date').innerText = new Date().toLocaleDateString();
+</script>
+
+<!-- Общая статистика -->
+<section>
+    <h2>Общая статистика</h2>
+    <ul>
+        <li>Количество пользователей в системе: <strong>{{ total_users }}</strong></li>
+        <li>Количество проектов: <strong>{{ total_projects }}</strong></li>
+        <li>Количество задач: <strong>{{ total_tasks }}</strong></li>
+        <li>За последние 30 дней создано задач: <strong>{{ tasks_last_30_days }}</strong></li>
+    </ul>
+
+    <!-- Диаграмма задач -->
+    <canvas id="task-chart" width="400" height="200"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('task-chart').getContext('2d');
+        const chartData = {{ chart_data|safe }};
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                responsive: true
+            }
+        });
+    </script>
+</section>
+
+<!-- Анализ данных -->
+<section>
+    <h2>Анализ данных</h2>
+    <ul>
+        <li>Топ-5 сотрудников с наибольшим числом задач:
+            <ol>
+                {% for employee in top_employees %}
+                <li>{{ employee.name }}: {{ employee.tasks_count }} задач</li>
+                {% endfor %}
+            </ol>
+        </li>
+    </ul>
+</section>
+
+</body>
+</html>
