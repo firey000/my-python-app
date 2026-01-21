@@ -67,9 +67,9 @@
 
 #### 1. Клонируйте репозиторий:
 
-```bash
+```bash```
  
- git clone https://github.com/ВАШ_USERNAME/my-python-app.git```
+ git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 #### 2. Активируйте виртуальное окружение:
 
