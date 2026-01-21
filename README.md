@@ -67,36 +67,36 @@
 
 #### 1. Клонируйте репозиторий:
 
- bash
+```bash
 
- git clone https://github.com/ВАШ_USERNAME/my-python-app.git
-
+git clone https://github.com/ВАШ_USERNAME/my-python-app.git
+```
 
 
 #### 2. Активируйте виртуальное окружение:
 
- bash
+```bash
 
  python3 -m venv env
 
  source env/bin/activate
-
+```
 
 
 #### 3. Установите зависимости:
 
- bash
+```bash
 
  pip install -r requirements.txt
-
+```
 
 
 #### 4. Настройте базу данных:
  
- bash
+```bash
 
  sudo apt-get install mysql-server mysql-client
-
+```
 
 
 
@@ -104,28 +104,28 @@
 
 #### Вручную:
 
- sudo apt update
+```sudo apt update
 
  sudo apt install mysql-server mysql-client -y
 
  sudo systemctl start mysql
 
  sudo systemctl enable mysql
-
+```
  
 
 
 ### Создание базы данных и пользователя
 
- sudo mysql -u root -p
-
+```sudo mysql -u root -p
+```
  
 
 
 
 #### В MySQL CLI:
 
- CREATE DATABASE myapp_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```CREATE DATABASE myapp_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
  CREATE USER 'myapp_user'@'localhost' IDENTIFIED BY 'secure_password';
 
@@ -134,7 +134,7 @@
  FLUSH PRIVILEGES;
 
  EXIT;
-
+```
 
 
 
@@ -145,8 +145,8 @@
 
 #### 6.Инициализируйте базу данных:
  
- python src/database/init_db.py
-
+```python src/database/init_db.py
+```
 
 
 
@@ -159,7 +159,7 @@
 
 ##### Database
 
- DB_HOST=localhost
+```DB_HOST=localhost
 
  DB_PORT=3306
 
@@ -170,30 +170,32 @@
  DB_PASSWORD=secure_password
 
  DB_CHARSET=utf8mb4
-
+```
  
 
 ##### App
 
+```
  DEBUG=False
 
  SECRET_KEY=your-secret-key-here
 
  LOG_LEVEL=INFO
-
+```
  
 
 ##### API
 
+```
  API_HOST=0.0.0.0
  
  API_PORT=8000
-
+```
  
 ### Конфигурационный файл
 
 #### python:
-
+```
  config/database.py
 
  import os
@@ -221,17 +223,17 @@
     'charset': os.getenv('DB_CHARSET', 'utf8mb4')
 
  }
-
+```
 
 ## Использование
 
 
 Начните работу:
 
- bash
+```bash
 
  python src/main.py
-
+```
 
 
 ## Структура проекта
