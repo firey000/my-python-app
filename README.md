@@ -68,21 +68,26 @@
 #### 1. Клонируйте репозиторий:
 
  bash
+
  git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 #### 2. Активируйте виртуальное окружение:
 
  bash
+
  python3 -m venv env
+
  source env/bin/activate
 
 #### 3. Установите зависимости:
 
  bash
+
  pip install -r requirements.txt
 
 #### 4. Настройте базу данных:
  bash
+
  sudo apt-get install mysql-server mysql-client
 
 
@@ -207,6 +212,7 @@
 Начните работу:
 
  bash
+
  python src/main.py
 
 
@@ -260,12 +266,19 @@ my-python-app/
 
 
 Используйте файл `requirements.txt` для управления зависимостями:
+
  bash
+
  mysql-connector-python==8.0.33
+
  SQLAlchemy==2.0.19
+
  python-dotenv==1.0.0
+
  Flask==3.0.0
+
  Flask-SQLAlchemy==3.1.1
+
  pytest==7.4.3
 
 
