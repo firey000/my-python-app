@@ -67,9 +67,11 @@
 
 #### 1. Клонируйте репозиторий:
 
-```bash```
- 
+ bash
+
  git clone https://github.com/ВАШ_USERNAME/my-python-app.git
+
+
 
 #### 2. Активируйте виртуальное окружение:
 
@@ -79,17 +81,22 @@
 
  source env/bin/activate
 
+
+
 #### 3. Установите зависимости:
 
  bash
 
  pip install -r requirements.txt
 
+
+
 #### 4. Настройте базу данных:
  
  bash
 
  sudo apt-get install mysql-server mysql-client
+
 
 
 
@@ -107,11 +114,14 @@
 
  
 
+
 ### Создание базы данных и пользователя
 
  sudo mysql -u root -p
 
  
+
+
 
 #### В MySQL CLI:
 
@@ -126,12 +136,18 @@
  EXIT;
 
 
+
+
 #### 5. Используйте `.env.example`, чтобы создать `.env` с параметрами доступа к базе данных.
+
+
 
 
 #### 6.Инициализируйте базу данных:
  
  python src/database/init_db.py
+
+
 
 
 
