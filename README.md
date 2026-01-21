@@ -104,7 +104,8 @@ git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 #### Вручную:
 
-```sudo apt update
+```
+ sudo apt update
 
  sudo apt install mysql-server mysql-client -y
 
@@ -117,7 +118,8 @@ git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 ### Создание базы данных и пользователя
 
-```sudo mysql -u root -p
+```
+ sudo mysql -u root -p
 ```
  
 
@@ -125,7 +127,8 @@ git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 #### В MySQL CLI:
 
-```CREATE DATABASE myapp_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+ CREATE DATABASE myapp_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
  CREATE USER 'myapp_user'@'localhost' IDENTIFIED BY 'secure_password';
 
@@ -145,7 +148,8 @@ git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 #### 6.Инициализируйте базу данных:
  
-```python src/database/init_db.py
+```
+ python src/database/init_db.py
 ```
 
 
@@ -159,7 +163,8 @@ git clone https://github.com/ВАШ_USERNAME/my-python-app.git
 
 ##### Database
 
-```DB_HOST=localhost
+```
+ DB_HOST=localhost
 
  DB_PORT=3306
 
