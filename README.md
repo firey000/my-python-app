@@ -67,28 +67,29 @@
 
 #### 1. Клонируйте репозиторий:
 
- bash
+ ```bash
 
- git clone https://github.com/ВАШ_USERNAME/my-python-app.git
+git clone https://github.com/ВАШ_USERNAME/my-python-app.git```
 
 #### 2. Активируйте виртуальное окружение:
 
- bash
+ ```bash
 
  python3 -m venv env
 
- source env/bin/activate
+ source env/bin/activate```
 
 #### 3. Установите зависимости:
 
- bash
+ ```bash
 
- pip install -r requirements.txt
+ pip install -r requirements.txt```
 
 #### 4. Настройте базу данных:
- bash
+ 
+ ```bash
 
- sudo apt-get install mysql-server mysql-client
+ sudo apt-get install mysql-server mysql-client```
 
 
 
